@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+:root {
+  --blue: hsl(246, 80%, 60%);
+  --light-red-work: hsl(15, 100%, 70%);
+
+  --soft-blue-play: hsl(195, 74%, 62%);
+  --light-red-study: hsl(348, 100%, 68%);
+  --lime-green-exercise: hsl(145, 58%, 55%);
+  --violet-social: hsl(264, 64%, 52%);
+  --soft-orange-selfcare: hsl(43, 84%, 65%);
+
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+}
+
+/* Genaeral styling */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--very-dark-blue);
+  color: var(--pale-blue);
+  font-family: "Rubik", sans-serif;
+}
+
+.main-container {
+  display: grid;
+  place-items: center;
+}
+
+main {
+  width: 80%;
+  height: 70%;
+  display: grid;
+  grid-template-areas: "aside main" "footer footer";
+  grid-template-columns: 15rem 1fr;
+  grid-template-rows: 1fr 5rem;
+  grid-gap: 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 100;
+  padding-bottom: 2rem;
+}
+p {
+  font-size: 1rem;
+}
+
+/* left side styling */
+section.profile-card {
+  grid-area: aside;
+  display: flex;
+}
+
+.container {
+  background: var(--dark-blue);
+  border-radius: 15px;
+}
+
+.profile {
+  background: var(--blue);
+  border-radius: 15px;
+  padding: 1rem;
+}
+
+.profile img {
+  width: 5rem;
+  border: 0.3rem solid #fff;
+  border-radius: 50%;
+  margin-bottom: 2.5rem;
+}
+
+.time-line {
+  padding: 1rem;
+}
+.time-line p:not(:last-child) {
+  padding-bottom: 1.2rem;
+}
+
+.time-line p:hover,
+.time-line p.active {
+  color: #fff;
+  cursor: pointer;
+}
+
+/* main area styling */
+section.time-track {
+  grid-area: main;
+  /* width: 70rem; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.time-track .container {
+  width: 15rem;
+}
+
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+}
+
+/* mobile screen display */
+@media only screen and (max-width: 600px) {
+  main {
+    height: 90%;
+    grid-template-areas: "aside" "main" "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  section.time-track {
+    flex-direction: column;
+  }
+
+  .time-track .container,
+  .container {
+    width: 100%;
+  }
+}
+
+/* @media all and (max-width: 900px) and (min-width: 600px) {
+  body {
+    width: 100%;
+    height: 100%;
+  }
+} */
