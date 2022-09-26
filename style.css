@@ -69,7 +69,7 @@ section.profile-card {
 .profile {
   background: var(--blue);
   border-radius: 15px;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .profile img {
@@ -80,8 +80,12 @@ section.profile-card {
 }
 
 .time-line {
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
 }
+
 .time-line p:not(:last-child) {
   padding-bottom: 1.2rem;
 }
@@ -95,7 +99,6 @@ section.profile-card {
 /* main area styling */
 section.time-track {
   grid-area: main;
-  /* width: 70rem; */
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -103,12 +106,99 @@ section.time-track {
 
 .time-track .container {
   width: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.icon {
+  height: 20%;
+  padding-right: 1rem;
+}
+
+.icon img {
+  width: 3.5rem;
+  height: 3.5rem;
+  overflow: hidden;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.activity {
+  width: 100%;
+  height: 100%;
+  background: var(--dark-blue);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 15px;
+  z-index: 10;
+}
+
+.activity div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+}
+
+.activity img {
+  width: 10%;
+  height: 10%;
+}
+
+.activity:hover {
+  background: var(--desaturated-blue);
+  cursor: pointer;
+}
+.activity img:hover {
+  cursor: pointer;
+}
+
+.time-track h2 {
+  padding-top: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 100;
+}
+
+.time-track h3 {
+  font-size: 1rem;
+}
+
+.time-track p {
+  padding-top: 5%;
+  font-size: 1rem;
+  color: var(--pale-blue);
+}
+
+.work {
+  background: var(--light-red-work);
+}
+.play {
+  background: var(--soft-blue-play);
+}
+.study {
+  background: var(--light-red-study);
+}
+.exercise {
+  background: var(--lime-green-exercise);
+}
+.social {
+  background: var(--violet-social);
+}
+.self-care {
+  background: var(--soft-orange-selfcare);
 }
 
 footer {
   grid-area: footer;
   display: flex;
   justify-content: center;
+}
+
+.attribution {
+  font-size: 12px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
 
 /* mobile screen display */
@@ -128,11 +218,27 @@ footer {
   .container {
     width: 100%;
   }
-}
 
-/* @media all and (max-width: 900px) and (min-width: 600px) {
-  body {
-    width: 100%;
+  .profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0;
+  }
+
+  .time-line {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0;
+  }
+
+  .activity {
     height: 100%;
   }
-} */
+
+  .activity div:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
